@@ -1,25 +1,25 @@
-# KUMFU Shop — React/Next.js UI edition
+# KUMFU Shop — Next.js Lite
 
-This repository now contains a React/Next.js site using the **actual source components** from the original private `narayanindustriesin/kumfu-shop` project.
+A small React/Next.js storefront preserving the **original KUMFU Shop's hero carousel, wallpaper card components, styling and sample wallpaper data**, extracted from `narayanindustriesin/kumfu-shop`.
 
-## Source files reused
-- `app/components/hero-carousel.tsx` — original hero carousel, unchanged
-- `app/components/marketplace-ui.tsx` — original UI library and wallpaper cards, unchanged
-- `lib/hero.ts`, `lib/templates.ts`, `lib/template-ratio.ts` — original helper/data modules
-- `app/globals.css` — original styles
-- `app/layout.tsx` — original root layout, with updated metadata
+## Included
+- Original `app/components/hero-carousel.tsx` and `lib/hero.ts` (carousel and theme)
+- Original `app/globals.css` and `app/layout.tsx` (global visual language)
+- Original wallpaper datasets, section heading, card and access badge, extracted into a **~10 KB** `app/components/marketplace-ui.tsx` (down from ~72 KB)
+- New minimal `app/page.tsx` using the original components, with lightweight navigation and footer
 
-The homepage is reduced to wallpaper collections. The original editor, CMS, database, Supabase, R2, ImageKit, admin system, and checkout are not wired into the homepage or installed as dependencies. The shared UI source still contains unused components and links for other product categories; further pruning can follow after visual QA.
+## Excluded
+Graphic editor, admin panel, CMS, Supabase, R2, ImageKit, checkout backend, unrelated marketplace categories, and all previous static HTML files.
 
-## Run locally
+## Run
 ```bash
 npm install
 npm run dev
 ```
-Open http://localhost:3000.
+Visit http://localhost:3000.
 
-## Important
-- This is not deployed or browser-verified yet.
-- Wallpaper images are original project's **sample Unsplash URLs**, not the owner's premium images.
-- Purchasing and payment are intentionally disabled until real products, official payment links, delivery terms and policies are configured.
-- The old static files `index.html`, `styles.css`, `products.js`, `script.js`, `policies.html` are superseded by Next.js.
+## Launch limitations
+This is **not yet browser-build verified or deployed**. Sample previews are from the original project's catalog, not premium assets. Purchasing is disabled. Replace sample images, configure real products and verified Razorpay/PayPal payment workflow, customer support, privacy/refund/delivery policies and restricted Google Drive fulfillment before taking orders.
+
+## Hosting
+Next.js server mode may need a suitable free host. For fully static deployment, assess `output: 'export'` after testing compatibility; avoid billing-required services.
